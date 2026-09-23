@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Divider from "@/components/Divider";
+import Footer from "@/components/Footer";
+import Nav from "@/components/Nav";
 import PauseWave from "@/components/PauseWave";
 import Reveal from "@/components/Reveal";
 import WaveHero from "@/components/WaveHero";
@@ -27,24 +29,7 @@ carrying its provenance.
 export default function Home() {
   return (
     <>
-      <nav className="sticky top-0 z-40 border-b border-border bg-background/86 backdrop-blur-md">
-        <div className="mx-auto flex max-w-[1120px] items-center justify-between px-[clamp(20px,5vw,64px)] py-4">
-          <div className="flex items-center gap-2.5 text-[19px] font-bold tracking-[-0.01em] text-primary">
-            <svg className="h-[26px] w-[26px] flex-none" viewBox="0 0 32 32" fill="none">
-              <path
-                d="M3 18c3-8 6-8 9 0s6 8 9 0 6-8 8 0"
-                stroke="#007C92"
-                strokeWidth="2.6"
-                strokeLinecap="round"
-              />
-            </svg>
-            AVELISSE
-          </div>
-          <div className="text-[13px] font-medium text-text-secondary">
-            A voice journal, not an app to manage
-          </div>
-        </div>
-      </nav>
+      <Nav />
 
       <header className="relative z-0 overflow-clip py-[clamp(56px,9vw,108px)] pb-[clamp(40px,7vw,72px)] text-center">
         <WaveHero />
@@ -611,17 +596,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-border py-8">
-        <div className="mx-auto flex max-w-[1120px] flex-wrap items-center justify-between gap-3 px-[clamp(20px,5vw,64px)] text-[13.5px] text-text-secondary">
-          <span>
-            © 2026 AVELISSE. Nothing about you leaves this page, either -
-            there&apos;s no analytics here.
-          </span>
-          {/* Contact address intentionally omitted: no confirmed address
-              exists yet. Add one here once it's decided, rather than
-              inventing a placeholder. */}
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
