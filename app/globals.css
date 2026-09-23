@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* AVELISSE — Mediterranean Coastal design tokens, ported from the
+   avelisse-android DESIGN.md system so this page stays on the same
+   palette as the real app rather than inventing its own. Light-only by
+   design: this is the app's own fixed palette, not a themeable surface. */
+@theme {
+  --color-primary: #007c92;
+  --color-primary-container: #d9ebef;
+  --color-primary-dark: #005d6e;
+  --color-secondary: #d85c27;
+  --color-secondary-container: #f9e7df;
+  --color-secondary-dark: #a2451d;
+  --color-accent: #ffb74d;
+  --color-background: #f7f7f7;
+  --color-surface: #ffffff;
+  --color-surface-variant: #f3e5ab;
+  --color-text-primary: #071a1d;
+  --color-text-secondary: #6e8a8f;
+  --color-border: #d8e2e3;
+  --font-sans: var(--font-dm-sans);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+/* The one repeating animated flourish outside the waveforms themselves:
+   a slow pulse on the "still listening" indicator in the no-timeout
+   section. */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+.animate-pulse-dot {
+  animation: pulse-dot 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-pulse-dot {
+    animation: none;
+  }
 }
