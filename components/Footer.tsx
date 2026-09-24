@@ -9,9 +9,14 @@ export default function Footer() {
           © 2026 AVELISSE. Nothing about you leaves this page, either -
           there&apos;s no analytics here.
         </span>
-        <Link href="/privacy" className="font-semibold text-primary hover:underline">
-          Privacy
-        </Link>
+        <div className="flex gap-5">
+          <Link href="/technical" className="font-semibold text-primary hover:underline">
+            How it&apos;s built
+          </Link>
+          <Link href="/privacy" className="font-semibold text-primary hover:underline">
+            Privacy
+          </Link>
+        </div>
         {/* Contact address intentionally omitted: no confirmed address
             exists yet. Add one here once it's decided, rather than
             inventing a placeholder. */}
