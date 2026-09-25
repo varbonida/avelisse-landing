@@ -9,7 +9,10 @@ export default function Footer() {
           © 2026 AVELISSE. Nothing about you leaves this page, either -
           there&apos;s no analytics here.
         </span>
-        <div className="flex gap-5">
+        <div className="flex flex-wrap gap-5">
+          <Link href="/about" className="font-semibold text-primary hover:underline">
+            About
+          </Link>
           <Link href="/technical" className="font-semibold text-primary hover:underline">
             How it&apos;s built
           </Link>

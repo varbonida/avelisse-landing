@@ -19,8 +19,16 @@ export default function Nav() {
           </svg>
           AVELISSE
         </Link>
-        <div className="text-[13px] font-medium text-text-secondary">
-          A voice journal, not an app to manage
+        <div className="flex items-center gap-5">
+          <Link
+            href="/about"
+            className="text-[13px] font-semibold text-primary hover:underline"
+          >
+            About
+          </Link>
+          <div className="hidden text-[13px] font-medium text-text-secondary sm:block">
+            A voice journal, not an app to manage
+          </div>
         </div>
       </div>
     </nav>
